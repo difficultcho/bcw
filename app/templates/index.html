@@ -1,0 +1,38 @@
+<!doctype html>
+<html class="no-js" lang="en">
+ <head>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Flask Payment</title>
+ <link rel="stylesheet" href="static/css/foundation.css" />
+ <script src="static/js/vendor/modernizr.js"></script>
+ </head>
+ <body>
+
+
+ <!-- Main Page Content and Sidebar -->
+ {% for transaction in transactions %}
+
+ <div class="row">
+ {{ transaction.sender }}
+ {{ transaction.receiver }}
+ {{ transaction.amount }}
+ {{ transaction.timestamp }}
+ {{ transaction.status }}
+
+ <p><a href="{{ url_for('edit', id=transaction.id) }}">Edit</a></p>
+ <p><a href="{{ url_for('delete', id=transaction.id) }}">Cancel</a></p>
+ <hr/>
+ </div>
+
+ {% endfor %}
+
+ <!-- End Main Content -->
+
+ <script src="static/js/vendor/jquery.js"></script>
+ <script src="static/js/foundation.min.js"></script>
+ <script>
+ $(document).foundation();
+ </script>
+ </body>
+ </html>

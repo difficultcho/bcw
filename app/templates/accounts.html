@@ -1,0 +1,33 @@
+<!doctype html>
+<html class="no-js" lang="en">
+ <head>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Flask Payment</title>
+ <link rel="stylesheet" href="static/css/foundation.css" />
+ <script src="static/js/vendor/modernizr.js"></script>
+ </head>
+ <body>
+
+
+ <!-- Main Page Content and Sidebar -->
+ {% for account in accounts %}
+
+ <div class="row">
+ {{ account.user }}
+ {{ account.amount }}
+ {{ account.lastUpdated }}
+ <hr/>
+ </div>
+
+ {% endfor %}
+
+ <!-- End Main Content -->
+
+ <script src="static/js/vendor/jquery.js"></script>
+ <script src="static/js/foundation.min.js"></script>
+ <script>
+ $(document).foundation();
+ </script>
+ </body>
+ </html>
